@@ -15,7 +15,7 @@ export const CarouselCard: React.FC<CarouselCardProps> = ({ carousel }) => {
       className="group overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-lg animate-fade-in"
       onClick={() => navigate(`/carousel/${carousel.id}`)}
     >
-      <div className="aspect-video overflow-hidden">
+      <div className="aspect-[3/4] overflow-hidden">
         <img
           src={carousel.thumbnail}
           alt={carousel.title}

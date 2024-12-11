@@ -13,6 +13,8 @@ const Index = () => {
       carousel.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const featuredCarousels = carousels.slice(0, 3);
+
   return (
     <div className="min-h-screen bg-background">
       <main className="container py-8 px-4 sm:px-6 lg:px-8">
@@ -25,6 +27,17 @@ const Index = () => {
           </p>
           <Search onSearch={setSearchQuery} />
         </div>
+
+        {!searchQuery && (
+          <div className="mb-12">
+            <h2 className="text-2xl font-semibold mb-6">Featured Carousels</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {featuredCarousels.map((carousel) => (
+                <CarouselCard key={carousel.id} carousel={carousel} />
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredCarousels.map((carousel) => (
