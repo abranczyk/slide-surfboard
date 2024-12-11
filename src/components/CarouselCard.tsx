@@ -12,7 +12,7 @@ export const CarouselCard: React.FC<CarouselCardProps> = ({ carousel }) => {
 
   return (
     <Card
-      className="group overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-lg animate-fade-in"
+      className="group overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-lg animate-fade-in max-w-[280px] mx-auto"
       onClick={() => navigate(`/carousel/${carousel.id}`)}
     >
       <div className="aspect-[3/4] overflow-hidden">
